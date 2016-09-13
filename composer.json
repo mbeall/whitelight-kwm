@@ -1,0 +1,16 @@
+{
+  "name": "starverte/witelite",
+  "version": "0.1.0",
+  "description": "A description.",
+  "license": "GPLv3",
+  "authors": [
+    {
+      "name": "Star Verte LLC",
+      "email": "dev@starverte.com"
+    }
+  ],
+  "require-dev": {
+    "squizlabs/php_codesniffer": "~2.2",
+    "wp-coding-standards/wpcs": "~0.9"
+  }
+}

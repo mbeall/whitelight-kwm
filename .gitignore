@@ -1,0 +1,25 @@
+# Numerous always-ignore extensions
+*.diff
+*.err
+*.lock
+*.log
+*.orig
+*.rej
+*.swo
+*.swp
+*.vi
+*.zip
+*~
+
+# OS or Editor folders
+._*
+.DS_Store
+
+# Folders to ignore
+node_modules
+tests
+vendor
+
+# Files to ignore
+js/npm.js
+

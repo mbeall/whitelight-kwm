@@ -1,0 +1,26 @@
+{
+  "name": "witelite",
+  "version": "0.1.0",
+  "description": "A fork of the WooCommerce Whitelight theme, merged with KWM Whitelight.",
+  "main": "style.css",
+  "scripts": {
+    "test": "snyk test && grunt test"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/starverte/witelite.git"
+  },
+  "author": "Star Verte LLC",
+  "license": "GPL-3.0",
+  "bugs": {
+    "url": "https://github.com/starverte/witelite/issues"
+  },
+  "homepage": "https://github.com/starverte/witelite#readme",
+  "devDependencies": {
+    "grunt": "^0.4.5",
+    "grunt-contrib-copy": "^1.0.0",
+    "grunt-csscomb": "^3.1.1",
+    "grunt-shell": "^1.3.1",
+    "snyk": "^1.19.1"
+  }
+}
