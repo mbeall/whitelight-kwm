@@ -47,7 +47,7 @@
 		$query_args['tax_query'] = array(
 										array( 'taxonomy' => 'slide-page', 'field' => 'id', 'terms' => intval( $settings['featured_slide_group']) )
 									);
-	}	
+	}
 
 ?>
 

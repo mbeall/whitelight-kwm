@@ -8,7 +8,7 @@ class Woo_AdWidget extends WP_Widget {
 
 	function Woo_AdWidget() {
 		$widget_ops = array('description' => 'Use this widget to add any type of Ad as a widget.' );
-		$this->__construct(false, __('Woo - Adspace Widget', 'woothemes'),$widget_ops);      
+		$this->__construct(false, __('Woo - Adspace Widget', 'woothemes'),$widget_ops);
 	}
 
 	function widget($args, $instance) {
@@ -78,6 +78,6 @@ class Woo_AdWidget extends WP_Widget {
 	</p>
 <?php
 	}
-} 
+}
 
 register_widget( 'Woo_AdWidget' );

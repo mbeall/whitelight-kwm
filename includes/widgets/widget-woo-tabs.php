@@ -54,7 +54,7 @@ class Woo_Widget_WooTabs extends WP_Widget {
 <div id="tabs">
 
     <ul class="wooTabs">
-    
+
     <?php if ( $order == "latest" && !$latest == "on") { ?>
     	<li class="latest"><a href="#tab-latest"><?php _e( 'Latest', 'woothemes' ); ?></a></li>
     <?php } elseif ( $order == "comments" && !$comments == "on") { ?>
@@ -71,7 +71,7 @@ class Woo_Widget_WooTabs extends WP_Widget {
     <?php if ($order <> "tags" && !$tags == "on") { ?>
     	<li class="tags"><a href="#tab-tags"><?php _e( 'Tags', 'woothemes' ); ?></a></li>
     <?php } ?>
-    
+
     </ul>
 
     <div class="fix"></div>

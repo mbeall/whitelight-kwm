@@ -81,7 +81,7 @@ class Woo_BlogAuthorInfo extends WP_Widget {
 			<label for="<?php echo $this->get_field_id('avatar_align'); ?>"><?php _e('Gravatar Alignment:','woothemes'); ?></label>
 			<select name="<?php echo $this->get_field_name('avatar_align'); ?>" class="widefat" id="<?php echo $this->get_field_id('avatar_align'); ?>">
 				<option value="left" <?php if($avatar_align == "left"){ echo "selected='selected'";} ?>><?php _e('Left', 'woothemes'); ?></option>
-				<option value="right" <?php if($avatar_align == "right"){ echo "selected='selected'";} ?>><?php _e('Right', 'woothemes'); ?></option>            
+				<option value="right" <?php if($avatar_align == "right"){ echo "selected='selected'";} ?>><?php _e('Right', 'woothemes'); ?></option>
 			</select>
 		</p>
 		<p>
@@ -102,6 +102,6 @@ class Woo_BlogAuthorInfo extends WP_Widget {
 		</p>
 		<?php
 	}
-} 
+}
 
 register_widget( 'Woo_BlogAuthorInfo' );
