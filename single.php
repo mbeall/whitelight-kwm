@@ -4,6 +4,7 @@
  *
  * This template is the default page template. It is used to display content when someone is viewing a
  * singular view of a post ('post' post_type).
+ *
  * @link http://codex.wordpress.org/Post_Types#Post
  *
  * @package WooFramework
@@ -21,28 +22,28 @@ $settings = array(
   'thumb_single' => 'false',
   'thumb_w' => 710,
   'thumb_h' => 180,
-  'thumb_align' => 'alignleft'
+  'thumb_align' => 'alignleft',
 );
+
 $settings = woo_get_dynamic_values( $settings );
 ?>
 
 <div id="content">
-  <div class="col-full">
-    <?php if ( isset( $woo_options['woo_breadcrumbs_show'] ) && $woo_options['woo_breadcrumbs_show'] == 'true' ) { ?>
+  <div class="col-full"><?php
+    if ( isset( $woo_options['woo_breadcrumbs_show'] ) && $woo_options['woo_breadcrumbs_show'] == 'true' ) { ?>
       <section id="breadcrumbs">
         <?php woo_breadcrumbs(); ?>
-      </section><!--/#breadcrumbs -->
-    <?php } ?>
+      </section><!--/#breadcrumbs --><?php
+    } ?>
 
-    <section id="main" class="col-left">
-      <?php
+    <section id="main" class="col-left"><?php
       if ( have_posts() ) {
         $count = 0;
+
         while ( have_posts() ) {
           the_post();
           $count++; ?>
-
-          <article <?php post_class('fix'); ?>>
+          <article <?php post_class( 'fix' ); ?>>
             <?php echo woo_embed( 'width=580' ); ?>
             <?php
             if ( $settings['thumb_single'] == 'true' && ! woo_embed( '' ) ) {
@@ -52,39 +53,36 @@ $settings = woo_get_dynamic_values( $settings );
                 . $settings['thumb_h'] . '&class=thumbnail '
                 . $settings['thumb_align']
               );
-            } ?>
+            }
 
-            <?php woo_post_meta(); ?>
-
+            woo_post_meta(); ?>
             <div class="post-body">
               <header>
                 <h1><?php the_title(); ?></h1>
-                <p class="post-category"><?php _e( 'Categories:', 'woothemes' ); ?> <?php the_category( ', ') ?></p>
+                <p class="post-category"><?php _e( 'Categories:', 'woothemes' ); ?> <?php the_category( ', ' ) ?></p>
               </header>
 
               <section class="entry fix">
-                <?php the_content(); ?>
                 <?php
+                the_content();
                 wp_link_pages(
                   array(
                     'before' => '<div class="page-link">' . __( 'Pages:', 'woothemes' ),
-                    'after' => '</div>'
+                    'after' => '</div>',
                   )
-                );
-                ?>
+                ); ?>
               </section>
-
-              <?php the_tags( '<p class="tags">'.__( 'Tags: ', 'woothemes' ), ', ', '</p>' ); ?>
+              <?php the_tags( '<p class="tags">' . __( 'Tags: ', 'woothemes' ), ', ', '</p>' ); ?>
             </div>
           </article><!-- .post -->
 
           <?php
           // Determine wether or not to display comments here, based on "Theme Options".
           if ( isset( $woo_options['woo_comments'] ) && in_array( $woo_options['woo_comments'], array( 'post', 'both' ) ) ) {
-          comments_template();
-          } ?>
+            comments_template();
+          }
 
-          <?php if ( isset( $woo_options['woo_post_author'] ) && $woo_options['woo_post_author'] == 'true' ) { ?>
+          if ( isset( $woo_options['woo_post_author'] ) && $woo_options['woo_post_author'] == 'true' ) { ?>
             <aside id="post-author" class="fix">
               <div class="profile-image">
                 <?php echo get_avatar( get_the_author_meta( 'ID' ), '70' ); ?>
@@ -92,7 +90,6 @@ $settings = woo_get_dynamic_values( $settings );
 
               <div class="profile-content">
                 <h3 class="title"><?php printf( esc_attr__( 'About %s', 'woothemes' ), get_the_author() ); ?></h3>
-
                 <?php the_author_meta( 'description' ); ?>
 
                 <div class="profile-link">
@@ -101,8 +98,8 @@ $settings = woo_get_dynamic_values( $settings );
                   </a>
                 </div><!-- #profile-link  -->
               </div><!-- .post-entries -->
-            </aside><!-- .post-author-box -->
-          <?php } ?>
+            </aside><!-- .post-author-box --><?php
+          } ?>
 
           <?php woo_subscribe_connect(); ?>
 
@@ -114,8 +111,8 @@ $settings = woo_get_dynamic_values( $settings );
       } else { ?>
         <article <?php post_class(); ?>>
           <p><?php _e( 'Sorry, no posts matched your criteria.', 'woothemes' ); ?></p>
-        </article><!-- .post -->
-      <?php } ?>
+        </article><!-- .post --><?php
+      } ?>
     </section><!-- #main -->
     <?php get_sidebar(); ?>
   </div>

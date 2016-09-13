@@ -16,35 +16,19 @@
     <exclude name="WordPress.VIP" />
 
     <!-- Temporary exclusions. -->
-    <exclude name="Generic.Commenting.DocComment" />
-    <exclude name="Generic.ControlStructures.InlineControlStructure" />
-    <exclude name="Generic.Files.LineEndings" />
-    <exclude name="Generic.Formatting.DisallowMultipleStatements" />
-    <exclude name="Generic.Functions.OpeningFunctionBraceKernighanRitchie" />
-    <exclude name="Generic.PHP.Syntax" />
-    <exclude name="PEAR.Functions.FunctionCallSignature" />
     <exclude name="Squiz.Commenting.BlockComment" />
     <exclude name="Squiz.Commenting.ClassComment" />
-    <exclude name="Squiz.Commenting.DocCommentAlignment" />
     <exclude name="Squiz.Commenting.FileComment" />
     <exclude name="Squiz.Commenting.FunctionComment" />
     <exclude name="Squiz.Commenting.InlineComment" />
     <exclude name="Squiz.Commenting.VariableComment" />
-    <exclude name="Squiz.ControlStructures.ControlSignature" />
-    <exclude name="Squiz.Functions.FunctionDeclarationArgumentSpacing" />
-    <exclude name="Squiz.Strings.ConcatenationSpacing" />
-    <exclude name="Squiz.Strings.DoubleQuoteUsage" />
-    <exclude name="Squiz.WhiteSpace.SuperfluousWhitespace" />
-    <exclude name="WordPress.Arrays.ArrayDeclaration" />
-    <exclude name="WordPress.Arrays.ArrayKeySpacingRestrictions" />
+
     <exclude name="WordPress.Functions.DontExtract" />
     <exclude name="WordPress.NamingConventions.ValidVariableName" />
     <exclude name="WordPress.PHP.YodaConditions" />
     <exclude name="WordPress.Variables.GlobalVariables" />
     <exclude name="WordPress.WP.EnqueuedResources" />
     <exclude name="WordPress.WP.I18n" />
-    <exclude name="WordPress.WhiteSpace.ControlStructureSpacing" />
-    <exclude name="WordPress.WhiteSpace.OperatorSpacing" />
     <exclude name="WordPress.XSS" />
 <!--    <exclude name="" />-->
   </rule>
