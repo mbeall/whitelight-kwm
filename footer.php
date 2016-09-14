@@ -54,6 +54,8 @@ if ( isset( $woo_options['woo_footer_sidebars'] ) && ( $woo_options['woo_footer_
       </div>
     </footer><!-- /#footer  -->
 
-    </div><!-- /#wrapper --><?php wp_footer(); woo_foot(); ?>
+    </div><!-- /#wrapper --><?php
+    wp_footer();
+    woo_foot(); ?>
   </body>
 </html>
