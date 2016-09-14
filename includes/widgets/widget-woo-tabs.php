@@ -330,13 +330,13 @@ if ( ! function_exists( 'woo_widget_tabs_comments' ) ) {
 
     if ( $comments ) {
       foreach ( (array) $comments as $comment ) {
-        $post = get_post( $comment->comment_post_ID ); ?>
+        $_post = get_post( $comment->comment_post_ID ); ?>
         <li class="recentcomments fix"><?php
           if ( $size > 0 ) {
             echo get_avatar( $comment, $size );
           } ?>
 
-          <a href="<?php echo get_comment_link( $comment->comment_ID ); ?>" title="<?php echo wp_filter_nohtml_kses( $comment->comment_author ); ?> <?php _e( 'on', 'woothemes' ); ?> <?php echo $post->post_title; ?>">
+          <a href="<?php echo get_comment_link( $comment->comment_ID ); ?>" title="<?php echo wp_filter_nohtml_kses( $comment->comment_author ); ?> <?php _e( 'on', 'woothemes' ); ?> <?php echo $_post->post_title; ?>">
             <?php echo wp_filter_nohtml_kses( $comment->comment_author ); ?>: <?php echo stripslashes( substr( wp_filter_nohtml_kses( $comment->comment_content ), 0, 50 ) ); ?>...
           </a>
         </li><?php
