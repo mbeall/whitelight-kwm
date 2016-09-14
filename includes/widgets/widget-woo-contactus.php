@@ -24,24 +24,24 @@ class Woo_ContactUs extends WP_Widget {
 
     <div class="wrap">
       <ul><?php
-        if ( $phone != '' ) { ?>
+        if ( '' != $phone ) { ?>
           <li class="phone"><span><?php _e( 'Phone', 'woothemes' ); ?></span><?php echo $phone; ?></li><?php
         }
 
-        if ( $email != '' ) { ?>
+        if ( '' != $email ) { ?>
           <li class="email"><span><?php _e( 'Email', 'woothemes' ); ?></span><a href="mailto:<?php echo $email; ?>"><?php echo $email; ?></a></li><?php
         }
 
-        if ( $vcard != '' ) { ?>
+        if ( '' != $vcard ) { ?>
           <li class="vcard"><span><?php _e( 'V-Card', 'woothemes' ); ?></span><a href="<?php echo $vcard; ?>"><?php _e( 'Download', 'woothemes' ); ?></a></li><?php
         }
 
-        if ( $address != '' ) { ?>
+        if ( '' != $address ) { ?>
           <li class="address">
             <span><?php _e( 'Address', 'woothemes' ); ?></span><?php
             _e( nl2br( $address ),'woothemes' );
 
-            if ( isset( $map_page_template ) && $map_page_template != '' ) { ?>
+            if ( isset( $map_page_template ) && '' != $map_page_template ) { ?>
               <a href="<?php echo get_permalink( $map_page_template ); ?>" class="map"><?php _e( 'Map','woothemes' ); ?> &raquo;</a><?php
             } ?>
           </li><?php

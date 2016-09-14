@@ -15,7 +15,7 @@ class Woo_Subscribe extends WP_Widget {
     extract( $args, EXTR_SKIP );
     extract( $instance, EXTR_SKIP );
 
-    if ( ! is_singular() || ($single != 'on' && is_single()) || ($page != 'on' && is_page()) ) {
+    if ( ! is_singular() || ( 'on' != $single && is_single()) || ( 'on' != $page && is_page() ) ) {
       echo $before_widget;
       woo_subscribe_connect( 'true', $title, $form, $social );
       echo $after_widget;

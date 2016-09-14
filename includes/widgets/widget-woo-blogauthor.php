@@ -23,7 +23,7 @@ class Woo_BlogAuthorInfo extends WP_Widget {
       }
     }
 
-    if ( ( $page == 'home' && is_home() ) || ( $page == 'single' && is_single() ) || $page == 'all' ) {
+    if ( ( 'home' == $page && is_home() ) || ( 'single' == $page && is_single() ) || 'all' == $page ) {
       echo $before_widget;
 
       if ( $title ) {
@@ -101,8 +101,8 @@ class Woo_BlogAuthorInfo extends WP_Widget {
     <p>
       <label for="<?php echo $this->get_field_id( 'avatar_align' ); ?>"><?php _e( 'Gravatar Alignment:','woothemes' ); ?></label>
       <select name="<?php echo $this->get_field_name( 'avatar_align' ); ?>" class="widefat" id="<?php echo $this->get_field_id( 'avatar_align' ); ?>">
-        <option value="left" <?php if ( $avatar_align == 'left' ) { echo "selected='selected'";} ?>><?php _e( 'Left', 'woothemes' ); ?></option>
-        <option value="right" <?php if ( $avatar_align == 'right' ) { echo "selected='selected'";} ?>><?php _e( 'Right', 'woothemes' ); ?></option>
+        <option value="left" <?php if ( 'left' == $avatar_align ) { echo "selected='selected'";} ?>><?php _e( 'Left', 'woothemes' ); ?></option>
+        <option value="right" <?php if ( 'right' == $avatar_align ) { echo "selected='selected'";} ?>><?php _e( 'Right', 'woothemes' ); ?></option>
       </select>
     </p>
 

@@ -46,7 +46,7 @@ $settings = woo_get_dynamic_values( $settings ); ?>
         $_product = new WC_Product( $loop->post->ID );
       } ?>
 
-      <li class="product <?php if ( $count % 3 == 0 ) { echo 'last'; } ?>">
+      <li class="product <?php if ( 0 == $count % 3 ) { echo 'last'; } ?>">
         <a href="<?php echo get_permalink( $loop->post->ID ) ?>" title="<?php echo esc_attr( $loop->post->post_title ? $loop->post->post_title : $loop->post->ID ); ?>">
           <div class="img-wrap"><?php
             woocommerce_show_product_sale_flash( $post, $_product );
@@ -65,7 +65,7 @@ $settings = woo_get_dynamic_values( $settings ); ?>
         <div class="fix"></div>
       </li>
 
-      <?php if ( $count % 3 == 0 ) { echo '<li class="fix clear"></li>'; } ?>
+      <?php if ( 0 == $count % 3 ) { echo '<li class="fix clear"></li>'; } ?>
     <?php } ?>
   </ul><!--/ul.recent-->
 </section>

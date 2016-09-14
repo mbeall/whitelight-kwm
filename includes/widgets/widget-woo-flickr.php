@@ -51,7 +51,7 @@ class Woo_flickr extends WP_Widget {
       $instance['height'] = $defaults['height'];
     }
 
-    if ( $instance['sorting'] != 'random' ) {
+    if ( 'random' != $instance['sorting'] ) {
       $instance['sorting'] = $defaults['sorting'];
     }
 
@@ -59,7 +59,7 @@ class Woo_flickr extends WP_Widget {
       $instance['size'] = $defaults['size'];
     }
 
-    if ( $instance['type'] != 'group' ) {
+    if ( 'group' != $instance['type'] ) {
       $instance['type'] = $defaults['type'];
     }
 

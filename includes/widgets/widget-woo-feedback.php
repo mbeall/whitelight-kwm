@@ -57,7 +57,7 @@ class Woo_Widget_Feedback extends WP_Widget {
     // Make sure our checkboxes are either true if available or false if empty.
     foreach ( array( 'pagination', 'display_author', 'display_url' ) as $k ) {
       if ( isset( $instance[ $k ] ) ) {
-        if ( $instance[ $k ] == true ) {
+        if ( true == $instance[ $k ] ) {
           ${$k} = true;
         } else {
           ${$k} = false;

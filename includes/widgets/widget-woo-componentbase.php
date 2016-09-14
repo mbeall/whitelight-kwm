@@ -71,7 +71,7 @@ class Woo_Widget_Component extends WP_Widget {
     extract( $args, EXTR_SKIP );
     $component = $instance['component'];
 
-    if ( $component != '' ) {
+    if ( '' != $component ) {
       get_template_part( 'includes/homepage-' . $component . '-panel' );
     }
   } // End widget()

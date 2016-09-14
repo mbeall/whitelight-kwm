@@ -29,7 +29,7 @@ $count = 0;
 $featposts = $settings['featured_entries']; // Number of featured entries to be shown
 $orderby = 'date';
 
-if ( $settings['featured_order'] == 'rand' ) {
+if ( 'rand' == $settings['featured_order'] ) {
   $orderby = 'rand';
 }
 
@@ -49,18 +49,18 @@ if ( 0 < intval( $settings['featured_slide_group'] ) ) {
 
 $slides = get_posts( $query_args ); if ( count( $slides ) > 0 ) {
   $slidertype = $settings['featured_type'];
-  if ( $slidertype != 'full' ) { ?>
+  if ( 'full' != $slidertype ) { ?>
   <div class="featured-wrap carousel faded"><?php
     } ?>
-    <div class="controls-container <?php if ( $slidertype != 'full' ) { echo 'col-full'; } ?>">
-      <section id="featured" <?php if ( $woo_options['woo_featured_effect'] == 'slide' ) { echo 'class="slide"'; } ?>>
+    <div class="controls-container <?php if ( 'full' != $slidertype ) { echo 'col-full'; } ?>">
+      <section id="featured" <?php if ( 'slide' == $woo_options['woo_featured_effect'] ) { echo 'class="slide"'; } ?>>
         <ul class="slides fix"><?php
           foreach ( $slides as $post ) {
             setup_postdata( $post );
             $count++; ?>
-            <li id="slide-<?php echo $count; ?>" class="slide slide-id-<?php the_ID(); ?>" <?php if ( $slidertype != 'full' ) { echo 'style="opacity: ' . $settings['featured_opacity'] . ';"'; } ?>>
+            <li id="slide-<?php echo $count; ?>" class="slide slide-id-<?php the_ID(); ?>" <?php if ( 'full' != $slidertype ) { echo 'style="opacity: ' . $settings['featured_opacity'] . ';"'; } ?>>
               <?php $url = get_post_meta( $post->ID, 'url', true );
-              if ( $slidertype == 'full' ) {
+              if ( 'full' == $slidertype ) {
                 $has_embed = woo_embed( 'width=800&height=400&class=slide-video' );
               } else {
                 $has_embed = woo_embed( 'width=960&height=' . $settings['featured_height'] . '&class=slide-video-carousel' );
@@ -69,17 +69,17 @@ $slides = get_posts( $query_args ); if ( count( $slides ) > 0 ) {
               if ( $has_embed ) {
                 echo $has_embed;
               } else {
-                if ( isset( $url ) && $url != '' ) { ?>
+                if ( isset( $url ) && '' != $url ) { ?>
                   <a href="<?php echo $url ?>" rel="bookmark" title="<?php the_title_attribute(); ?>"><?php
                 }
 
-                if ( $slidertype != 'full' ) {
+                if ( 'full' != $slidertype ) {
                   woo_image( 'width=960&height=' . $settings['featured_height'] . '&class=slide-image&link=img&noheight=true' );
                 } else {
                   woo_image( 'width=2560&height=' . $settings['featured_height'] . '&class=slide-image full&link=img&noheight=true' );
                 }
 
-                if ( isset( $url ) && $url != '' ) { ?>
+                if ( isset( $url ) && '' != $url ) { ?>
                   </a><?php
                 }
               }
@@ -91,26 +91,26 @@ $slides = get_posts( $query_args ); if ( count( $slides ) > 0 ) {
                * if hide description, add class and dont show description
                */
               if ( ! $has_embed ) {
-                if ( $settings['slider_video_title'] == 'true' || $settings['slider_video_description'] == 'true' ) { ?>
+                if ( 'true' == $settings['slider_video_title'] || 'true' == $settings['slider_video_description'] ) { ?>
                   <div class="slide-content-container">
                     <article class="slide-content col-full <?php if ( ! $has_embed ) { echo 'not-video'; } ?>">
-                      <header <?php if ( $settings['slider_video_title'] != 'true' || $settings['slider_video_description'] != 'true' ) { echo 'class="no-meta"'; } ?>><?php
-                        if ( $settings['slider_video_title'] == 'true' ) { ?>
+                      <header <?php if ( 'true' != $settings['slider_video_title'] || 'true' != $settings['slider_video_description'] ) { echo 'class="no-meta"'; } ?>><?php
+                        if ( 'true' == $settings['slider_video_title'] ) { ?>
                           <h1><?php
-                            if ( isset( $url ) && $url != '' ) { ?>
+                            if ( isset( $url ) && '' != $url ) { ?>
                               <a href="<?php echo $url ?>" rel="bookmark" title="<?php the_title_attribute(); ?>"><?php
                             }
 
                             $slide_title = get_the_title();
                             echo woo_text_trim( $slide_title, 25 );
 
-                            if ( isset( $url ) && $url != '' ) {
+                            if ( isset( $url ) && '' != $url ) {
                               ?></a><?php
                             } ?>
                           </h1><?php
                         }
 
-                        if ( $settings['slider_video_description'] == 'true' ) { ?>
+                        if ( 'true' == $settings['slider_video_description'] ) { ?>
                           <div class="entry"><?php
                             $slide_excerpt = get_the_excerpt();
                             echo woo_text_trim( $slide_excerpt, 16 ); ?>
@@ -123,11 +123,11 @@ $slides = get_posts( $query_args ); if ( count( $slides ) > 0 ) {
               } ?>
             </li><!--/.slide--><?php
           } ?>
-        </ul><!-- /.slides --><?php if ( $slidertype == 'full' ) {
+        </ul><!-- /.slides --><?php if ( 'full' == $slidertype ) {
         ?><div class="col-full controls-inner"></div><?php
         } ?>
       </section><!-- /#featured -->
-    </div><?php if ( $slidertype != 'full' ) {
+    </div><?php if ( 'full' != $slidertype ) {
     ?>
   </div><?php
   }
@@ -138,7 +138,7 @@ $slides = get_posts( $query_args ); if ( count( $slides ) > 0 ) {
    */
   $animation = $settings['featured_effect'];
 
-  if ( $settings['featured_speed'] == 'Off' ) {
+  if ( 'Off' == $settings['featured_speed'] ) {
     $slideshow = 'false';
   } else {
     $slideshow = 'true';
@@ -155,13 +155,13 @@ $slides = get_posts( $query_args ); if ( count( $slides ) > 0 ) {
   jQuery(window).load(function() {
   jQuery('#featured').flexslider({
   animation: "<?php
-    if ( $slidertype != 'full' ) {
+    if ( 'full' != $slidertype ) {
       echo 'slide';
     } else {
       echo $animation;
     } ?>",
   controlsContainer: <?php
-    if ( $slidertype != 'full' ) {
+    if ( 'full' != $slidertype ) {
       echo '".controls-container"';
     } else {
       echo '".controls-container .controls-inner"';
@@ -173,10 +173,10 @@ $slides = get_posts( $query_args ); if ( count( $slides ) > 0 ) {
   slideshowSpeed: <?php echo $slideshow_speed; ?>,
   animationDuration: <?php
     echo $animation_duration;
-    if ( $slidertype != 'full' ) {
+    if ( 'full' != $slidertype ) {
       echo ',';
     }
-    if ( $slidertype != 'full' ) { ?>
+    if ( 'full' != $slidertype ) { ?>
       start: function(slider) {
         jQuery('.featured-wrap #featured .slide:eq(' + (slider.currentSlide + 1) + ')').addClass('current-slide');
       },

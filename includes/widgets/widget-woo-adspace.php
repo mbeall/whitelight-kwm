@@ -17,11 +17,11 @@ class Woo_AdWidget extends WP_Widget {
     extract( $instance, EXTR_SKIP );
     echo '<div class="adspace-widget widget">';
 
-    if ( $title != '' ) {
+    if ( '' != $title ) {
       echo $before_title . apply_filters( 'widget_title', $title, $instance, $this->id_base ) . $after_title;
     }
 
-    if ( $adcode != '' ) {
+    if ( '' != $adcode ) {
       echo $adcode;
     } else { ?>
       <a href="<?php echo esc_url( $href ); ?>"><img src="<?php echo apply_filters( 'image', $image, $instance, $this->id_base ); ?>" alt="<?php echo esc_attr( $alt ); ?>" /></a><?php

@@ -30,7 +30,7 @@ $settings = woo_get_dynamic_values( $settings );
 
 <div id="content">
   <div class="col-full"><?php
-    if ( isset( $woo_options['woo_breadcrumbs_show'] ) && $woo_options['woo_breadcrumbs_show'] == 'true' ) { ?>
+    if ( isset( $woo_options['woo_breadcrumbs_show'] ) && true == $woo_options['woo_breadcrumbs_show'] ) { ?>
       <section id="breadcrumbs">
         <?php woo_breadcrumbs(); ?>
       </section><!--/#breadcrumbs --><?php
@@ -46,7 +46,7 @@ $settings = woo_get_dynamic_values( $settings );
           <article <?php post_class( 'fix' ); ?>>
             <?php echo woo_embed( 'width=580' ); ?>
             <?php
-            if ( $settings['thumb_single'] == 'true' && ! woo_embed( '' ) ) {
+            if ( 'true' == $settings['thumb_single'] && ! woo_embed( '' ) ) {
               woo_image(
                 'noheight=true&width='
                 . $settings['thumb_w'] . '&height='
@@ -82,7 +82,7 @@ $settings = woo_get_dynamic_values( $settings );
             comments_template();
           }
 
-          if ( isset( $woo_options['woo_post_author'] ) && $woo_options['woo_post_author'] == 'true' ) { ?>
+          if ( isset( $woo_options['woo_post_author'] ) && 'true' == $woo_options['woo_post_author'] ) { ?>
             <aside id="post-author" class="fix">
               <div class="profile-image">
                 <?php echo get_avatar( get_the_author_meta( 'ID' ), '70' ); ?>

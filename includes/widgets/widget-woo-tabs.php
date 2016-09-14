@@ -39,27 +39,27 @@ class Woo_Widget_WooTabs extends WP_Widget {
     ?>
     <div id="tabs">
       <ul class="wooTabs"><?php
-        if ( $order == 'latest' && ! $latest == 'on' ) { ?>
+        if ( 'latest' == $order && ! 'on' == $latest ) { ?>
           <li class="latest"><a href="#tab-latest"><?php _e( 'Latest', 'woothemes' ); ?></a></li><?php
-        } elseif ( $order == 'comments' && ! $comments == 'on' ) { ?>
+        } elseif ( 'comments' == $order && ! 'on' == $comments ) { ?>
           <li class="comments"><a href="#tab-comm"><?php _e( 'Comments', 'woothemes' ); ?></a></li><?php
-        } elseif ( $order == 'tags' && ! $tags == 'on' ) { ?>
+        } elseif ( 'tags' == $order && ! 'on' == $tags ) { ?>
           <li class="tags"><a href="#tab-tags"><?php _e( 'Tags', 'woothemes' ); ?></a></li><?php
         }
 
-        if ( ! $pop == 'on' ) { ?>
+        if ( ! 'on' == $pop ) { ?>
           <li class="popular"><a href="#tab-pop"><?php _e( 'Popular', 'woothemes' ); ?></a></li><?php
         }
 
-        if ( $order <> 'latest' && ! $latest == 'on' ) { ?>
+        if ( 'latest' <> $order && ! 'on' == $latest ) { ?>
           <li class="latest"><a href="#tab-latest"><?php _e( 'Latest', 'woothemes' ); ?></a></li><?php
         }
 
-        if ( $order <> 'comments' && ! $comments == 'on' ) { ?>
+        if ( 'comments' <> $order && ! 'on' == $comments ) { ?>
           <li class="comments"><a href="#tab-comm"><?php _e( 'Comments', 'woothemes' ); ?></a></li><?php
         }
 
-        if ( $order <> 'tags' && ! $tags == 'on' ) { ?>
+        if ( 'tags' <> $order && ! 'on' == $tags ) { ?>
           <li class="tags"><a href="#tab-tags"><?php _e( 'Tags', 'woothemes' ); ?></a></li><?php
         } ?>
       </ul>
@@ -67,25 +67,25 @@ class Woo_Widget_WooTabs extends WP_Widget {
       <div class="fix"></div>
 
       <div class="boxes box inside"><?php
-        if ( $order == 'latest' && ! $latest == 'on' ) { ?>
+        if ( 'latest' == $order && ! 'on' == $latest ) { ?>
           <ul id="tab-latest" class="list"><?php
             if ( function_exists( 'woo_widget_tabs_latest' ) ) {
               woo_widget_tabs_latest( $number, $thumb_size );
             } ?>
           </ul><?php
-        } elseif ( $order == 'comments' && ! $comments == 'on' ) { ?>
+        } elseif ( 'comments' == $order && ! 'on' == $comments ) { ?>
           <ul id="tab-comm" class="list"><?php
           if ( function_exists( 'woo_widget_tabs_comments' ) ) {
             woo_widget_tabs_comments( $number, $thumb_size );
           } ?>
           </ul><?php
-        } elseif ( $order == 'tags' && ! $tags == 'on' ) { ?>
+        } elseif ( 'tags' == $order && ! 'on' == $tags ) { ?>
           <div id="tab-tags" class="list"><?php
             wp_tag_cloud( 'smallest=12&largest=20' ); ?>
           </div><?php
         }
 
-        if ( ! $pop == 'on' ) { ?>
+        if ( ! 'on' == $pop ) { ?>
           <ul id="tab-pop" class="list"><?php
           if ( function_exists( 'woo_widget_tabs_popular' ) ) {
             woo_widget_tabs_popular( $number, $thumb_size, $days );
@@ -93,7 +93,7 @@ class Woo_Widget_WooTabs extends WP_Widget {
           </ul><?php
         }
 
-        if ( $order <> 'latest' && ! $latest == 'on' ) { ?>
+        if ( 'latest' <> $order && ! 'on' == $latest ) { ?>
           <ul id="tab-latest" class="list"><?php
           if ( function_exists( 'woo_widget_tabs_latest' ) ) {
             woo_widget_tabs_latest( $number, $thumb_size );
@@ -101,7 +101,7 @@ class Woo_Widget_WooTabs extends WP_Widget {
           </ul><?php
         }
 
-        if ( $order <> 'comments' && ! $comments == 'on' ) { ?>
+        if ( 'comments' <> $order && ! 'on' == $comments ) { ?>
           <ul id="tab-comments" class="list"><?php
           if ( function_exists( 'woo_widget_tabs_comments' ) ) {
             woo_widget_tabs_comments( $number, $thumb_size );
@@ -109,7 +109,7 @@ class Woo_Widget_WooTabs extends WP_Widget {
           </ul><?php
         }
 
-        if ( $order <> 'tags' && ! $tags == 'on' ) { ?>
+        if ( 'tags' <> $order && ! 'on' == $tags ) { ?>
           <div id="tab-tags" class="list"><?php
             wp_tag_cloud( 'smallest=12&largest=20' ); ?>
           </div><?php
@@ -277,7 +277,7 @@ if ( ! function_exists( 'woo_widget_tabs_popular' ) ) {
     foreach ( $popular as $post ) {
       setup_postdata( $post ); ?>
       <li class="fix"><?php
-        if ( $size <> 0 ) {
+        if ( 0 <> $size ) {
           woo_image( 'height=' . $size . '&width=' . $size . '&class=thumbnail&single=true' );
         } ?>
 
@@ -308,7 +308,7 @@ if ( ! function_exists( 'woo_widget_tabs_latest' ) ) {
     foreach ( $latest as $post ) {
       setup_postdata( $post ); ?>
       <li class="fix"><?php
-        if ( $size <> 0 ) {
+        if ( 0 <> $size ) {
           woo_image( 'height=' . $size . '&width=' . $size . '&class=thumbnail&single=true' );
         } ?>
 
