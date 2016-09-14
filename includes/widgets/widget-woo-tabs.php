@@ -254,7 +254,8 @@ if ( is_active_widget( null,null,'woo_tabs' ) == true ) {
   add_action( 'wp_footer','woo_widget_tabs_js' );
 }
 
-function woo_widget_tabs_js() { ?>
+function woo_widget_tabs_js() {
+  ?>
   <!-- Woo Tabs Widget -->
   <script type="text/javascript">jQuery(document).ready(function(){var a="#tagcloud";var b=jQuery("#tagcloud").height();jQuery(".inside ul li:last-child").css("border-bottom","0px");jQuery(".wooTabs").each(function(){jQuery(this).children("li").children("a:first").addClass("selected")});jQuery(".inside > *").hide();jQuery(".inside > *:first-child").show();jQuery(".wooTabs li a").click(function(a){var b=jQuery(this).attr("href");jQuery(this).parent().parent().children("li").children("a").removeClass("selected");jQuery(this).addClass("selected");jQuery(this).parent().parent().parent().children(".inside").children("*").hide();jQuery(".inside "+b).fadeIn(500);a.preventDefault()})})</script><?php
 }

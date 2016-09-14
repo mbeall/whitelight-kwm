@@ -143,7 +143,8 @@ if ( is_active_widget( null, null, 'woo_embedwidget' ) == true ) {
   add_action( 'wp_footer','woo_widget_embed_js' );
 }
 
-function woo_widget_embed_js() { ?>
+function woo_widget_embed_js() {
+  ?>
   <!-- Woo Video Player Widget -->
   <script type="text/javascript">
   jQuery(document).ready(function(){
