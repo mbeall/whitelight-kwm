@@ -21,15 +21,15 @@ body {
 /*
  * Header/Navigation
  */
-#text-title{
-  font-family:'Raleway','Helvetica', sans-serif;
-  font-weight: normal;
-  text-transform: uppercase;
-  font-size: 46px;	
+#text-title {
   margin: 23px 0 0 95px;
+  font-family: "Raleway","Helvetica", sans-serif;
+  font-size: 46px;
+  font-weight: normal;
   line-height: 0.9;
+  text-transform: uppercase;
 }
-#logo{
+#logo {
   position: static;
   float: left;
   margin-right: 10px;
@@ -37,32 +37,32 @@ body {
 #logo img {
   width: 85px;
 }
-@media all and (min-width:768px){
-  #header{
+@media all and (min-width:768px) {
+  #header {
     padding-top: 14px;
     padding-bottom: 16px;
   }
-  #header .col-full{
+  #header .col-full {
     max-width: none;
   }
-  #top{
+  #top {
     background: none;
   }
-  #text-title{
-    font-weight: normal;
-    text-transform: uppercase;
-    font-size: 46px;	
+  #text-title {
     margin: 34px 0 0 60px;
+    font-size: 46px;
+    font-weight: normal;
     line-height: 1.2em;
+    text-transform: uppercase;
   }
-  #navigation{
+  #navigation {
     margin-left: 55px;
   }
-  #logo{
+  #logo {
     position: absolute;
     top: -40px;
   }
-  #logo img{
+  #logo img {
     width: 115px;
   }
   #intro h1 {
@@ -77,12 +77,12 @@ body {
   font-size: 36px;
 }
 .entry h2 {
-  color: #9f6302;
   font-size: 30px;
+  color: #9f6302;
 }
 .entry h3 {
-  color: #444;
   font-size: 24px;
+  color: #444;
 }
 .entry h4 {
   font-size: 18px;
@@ -96,24 +96,24 @@ body {
 
 .btn {
   display: inline-block;
+  padding: 6px 12px;
   margin-bottom: 0;
+  font-size: 14px;
   font-weight: normal;
+  line-height: 1.42857143;
   text-align: center;
+  white-space: nowrap;
   vertical-align: middle;
   -ms-touch-action: manipulation;
       touch-action: manipulation;
   cursor: pointer;
+  -webkit-user-select: none;
+     -moz-user-select: none;
+      -ms-user-select: none;
+          user-select: none;
   background-image: none;
   border: 1px solid transparent;
-  white-space: nowrap;
-  padding: 6px 12px;
-  font-size: 14px;
-  line-height: 1.42857143;
   border-radius: 4px;
-  -webkit-user-select: none;
-  -moz-user-select: none;
-  -ms-user-select: none;
-  user-select: none;
 }
 .btn:focus,
 .btn:active:focus,
@@ -128,49 +128,49 @@ body {
 .btn:hover,
 .btn:focus,
 .btn.focus {
-  color: #333333;
+  color: #333;
   text-decoration: none;
 }
 .btn:active,
 .btn.active {
-  outline: 0;
   background-image: none;
+  outline: 0;
   -webkit-box-shadow: inset 0 3px 5px rgba(0, 0, 0, 0.125);
-  box-shadow: inset 0 3px 5px rgba(0, 0, 0, 0.125);
+          box-shadow: inset 0 3px 5px rgba(0, 0, 0, 0.125);
 }
 .btn.disabled,
 .btn[disabled],
 fieldset[disabled] .btn {
   cursor: not-allowed;
-  opacity: 0.65;
   filter: alpha(opacity=65);
   -webkit-box-shadow: none;
-  box-shadow: none;
+          box-shadow: none;
+  opacity: 0.65;
 }
 a.btn.disabled,
 fieldset[disabled] a.btn {
   pointer-events: none;
 }
 .btn-red {
-  color: #ffffff!important;
+  color: #fff!important;
   background-color: #a62213;
   border-color: #8f1d10;
 }
 .btn-red:focus,
 .btn-red.focus {
-  color: #ffffff!important;
+  color: #fff!important;
   background-color: #78190e;
   border-color: #1d0603;
 }
 .btn-red:hover {
-  color: #ffffff!important;
+  color: #fff!important;
   background-color: #78190e;
   border-color: #58120a;
 }
 .btn-red:active,
 .btn-red.active,
 .open > .dropdown-toggle.btn-red {
-  color: #ffffff!important;
+  color: #fff!important;
   background-color: #78190e;
   border-color: #58120a;
 }
@@ -183,7 +183,7 @@ fieldset[disabled] a.btn {
 .btn-red:active.focus,
 .btn-red.active.focus,
 .open > .dropdown-toggle.btn-red.focus {
-  color: #ffffff!important;
+  color: #fff!important;
   background-color: #58120a;
   border-color: #1d0603;
 }
@@ -206,5 +206,5 @@ fieldset[disabled] .btn-red.focus {
 }
 .btn-red .badge {
   color: #a62213;
-  background-color: #ffffff;
+  background-color: #fff;
 }
