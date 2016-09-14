@@ -144,10 +144,10 @@ $slides = get_posts( $query_args ); if ( count( $slides ) > 0 ) {
     $slideshow = 'true';
   }
 
-  $pauseOnHover = $settings['featured_hover'];
-  $touchSwipe = $settings['featured_touchswipe'];
-  $slideshowSpeed = $settings['featured_speed'] * 1000; // milliseconds
-  $animationDuration = $settings['featured_animation_speed'] * 1000; // milliseconds
+  $pause_on_hover = $settings['featured_hover'];
+  $touch_swipe = $settings['featured_touchswipe'];
+  $slideshow_speed = $settings['featured_speed'] * 1000; // milliseconds
+  $animation_duration = $settings['featured_animation_speed'] * 1000; // milliseconds
   $pagination = $settings['featured_pagination'];
   $nextprev = $settings['featured_nextprev']; ?>
 
@@ -169,10 +169,10 @@ $slides = get_posts( $query_args ); if ( count( $slides ) > 0 ) {
   slideshow: <?php echo $slideshow; ?>,
   directionNav: <?php echo $nextprev; ?>,
   controlNav: <?php echo $pagination; ?>,
-  pauseOnHover: <?php echo $pauseOnHover; ?>,
-  slideshowSpeed: <?php echo $slideshowSpeed; ?>,
+  pauseOnHover: <?php echo $pause_on_hover; ?>,
+  slideshowSpeed: <?php echo $slideshow_speed; ?>,
   animationDuration: <?php
-    echo $animationDuration;
+    echo $animation_duration;
     if ( $slidertype != 'full' ) {
       echo ',';
     }
