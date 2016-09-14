@@ -19,7 +19,7 @@ class Woo_ContactUs extends WP_Widget {
     echo $before_widget;
 
     if ( $title ) {
-      echo $before_title . __( $title, 'woothemes' ) . $after_title;
+      echo $before_title . $title . $after_title;
     } ?>
 
     <div class="wrap">
@@ -39,7 +39,7 @@ class Woo_ContactUs extends WP_Widget {
         if ( '' != $address ) { ?>
           <li class="address">
             <span><?php _e( 'Address', 'woothemes' ); ?></span><?php
-            _e( nl2br( $address ),'woothemes' );
+            echo nl2br( $address );
 
             if ( isset( $map_page_template ) && '' != $map_page_template ) { ?>
               <a href="<?php echo get_permalink( $map_page_template ); ?>" class="map"><?php _e( 'Map','woothemes' ); ?> &raquo;</a><?php
@@ -104,7 +104,7 @@ class Woo_ContactUs extends WP_Widget {
     <p>
       <label for="<?php echo $this->get_field_id( 'map_page_template' ); ?>"><?php _e( 'Contact Us Page:', 'woothemes' ); ?></label>
       <select name="<?php echo $this->get_field_name( 'map_page_template' ); ?>" class="widefat" id="<?php echo $this->get_field_id( 'map_page_template' ); ?>"><?php foreach ( $woo_pages_raw as $k => $v ) {?>
-        <option value="<?php echo $k ?>" <?php if ( $map_page_template == $k ) { echo "selected='selected'";} ?>><?php _e( $v, 'woothemes' ); ?></option><?php } ?>
+        <option value="<?php echo $k ?>" <?php if ( $map_page_template == $k ) { echo "selected='selected'";} ?>><?php echo $v; ?></option><?php } ?>
       </select>
     </p><?php
   }
