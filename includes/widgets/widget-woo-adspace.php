@@ -5,7 +5,7 @@
 class Woo_AdWidget extends WP_Widget {
   var $settings = array( 'title', 'adcode', 'image', 'href', 'alt' );
 
-  function Woo_AdWidget() {
+  function __construct() {
     $widget_ops = array( 'description' => 'Use this widget to add any type of Ad as a widget.' );
     $this->__construct( false, __( 'Woo - Adspace Widget', 'woothemes' ),$widget_ops );
   }

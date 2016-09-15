@@ -21,7 +21,7 @@ class Woo_Widget_Feedback extends WP_Widget {
    *
    * The constructor. Sets up the widget.
    */
-  function Woo_Widget_Feedback() {
+  function __construct() {
     /* Widget settings. */
     $widget_ops = array( 'classname' => 'widget_woo_feedback', 'description' => __( 'Display your feedback in a customised widget.', 'woothemes' ) );
     /* Widget control settings. */

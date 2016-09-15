@@ -7,7 +7,7 @@ Twitter widget */
 class Woo_Twitter extends WP_Widget {
   var $settings = array( 'title', 'limit', 'username' );
 
-  function Woo_Twitter() {
+  function __construct() {
     $widget_ops = array( 'description' => 'Add your Twitter feed to your sidebar with this widget.' );
     $this->__construct( false, __( 'Woo - Twitter Stream', 'woothemes' ), $widget_ops );
   }

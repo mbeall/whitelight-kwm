@@ -5,7 +5,7 @@
 class Woo_Search extends WP_Widget {
   var $settings = array( 'title' );
 
-  function Woo_Search() {
+  function __construct() {
     $widget_ops = array( 'description' => 'This is a WooThemes standardized search widget.' );
     $this->__construct( false, __( 'Woo - Search', 'woothemes' ), $widget_ops );
   }

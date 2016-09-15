@@ -35,7 +35,7 @@ class Woo_Widget_Component extends WP_Widget {
    *
    * The constructor. Sets up the widget.
    */
-  function Woo_Widget_Component() {
+  function __construct() {
     /* Widget variable settings. */
     $this->woo_widget_cssclass = 'widget_woo_component';
     $this->woo_widget_idbase = 'woo_component';

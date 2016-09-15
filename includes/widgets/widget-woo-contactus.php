@@ -3,7 +3,7 @@
  * Contact Us widget
  */
 class Woo_ContactUs extends WP_Widget {
-  function Woo_ContactUs() {
+  function __construct() {
     $widget_ops = array( 'description' => 'Note: To be used on your Homepage' );
     $this->__construct( false, __( 'Woo - Contact Us', 'woothemes' ),$widget_ops );
   }

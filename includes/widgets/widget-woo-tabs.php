@@ -22,7 +22,7 @@ class Woo_Widget_WooTabs extends WP_Widget {
    *
    * The constructor. Sets up the widget.
    */
-  function Woo_Widget_WooTabs() {
+  function __construct() {
     /* Widget settings. */
     $widget_ops = array( 'classname' => 'widget_woo_tabs', 'description' => __( 'This widget is the Tabs that classically goes into the sidebar. It contains the Popular posts, Latest Posts, Recent comments and a Tag cloud.', 'woothemes' ) );
     /* Widget control settings. */

@@ -5,7 +5,7 @@
 class Woo_Subscribe extends WP_Widget {
   var $settings = array( 'title', 'form', 'social', 'single', 'page' );
 
-  function Woo_Subscribe() {
+  function __construct() {
     $widget_ops = array( 'description' => 'Add a subscribe/connect widget.' );
     $this->__construct( false, __( 'Woo - Subscribe / Connect', 'woothemes' ), $widget_ops );
   }
