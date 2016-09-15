@@ -11,7 +11,7 @@
  Text Domain:  whitelight-kwm
 */
 
-@import url(../whitelight/style.css);
+@import url(css/whitelight.css);
 
 html,
 body {
