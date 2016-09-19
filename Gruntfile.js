@@ -9,7 +9,20 @@ module.exports = function(grunt) {
           config: './.csscomb.json'
         },
         files: {
-          'style.css': ['style.css']
+          'style.css': ['style.css'],
+          'css/layout.css': ['css/layout.css'],
+          'css/woocommerce.css': ['css/woocommerce.css'],
+        }
+      }
+    },
+    sass: {
+      options: {
+        sourceMap: false
+      },
+      css: {
+        files: {
+          'css/layout.css': 'css/layout.scss',
+          'css/woocommerce.css': 'css/woocommerce.scss',
         }
       }
     },
@@ -27,9 +40,10 @@ module.exports = function(grunt) {
   });
 
   grunt.loadNpmTasks( 'grunt-contrib-copy' );
+  grunt.loadNpmTasks( 'grunt-sass' );
   grunt.loadNpmTasks( 'grunt-shell' );
   grunt.loadNpmTasks( 'grunt-csscomb' );
   grunt.registerTask( 'init', ['shell:phpcs_config'] );
-  grunt.registerTask( 'build', ['csscomb'] );
+  grunt.registerTask( 'build', ['sass','csscomb'] );
   grunt.registerTask( 'test', ['shell:syntax_tests', 'shell:phpcs_tests'] );
 }
